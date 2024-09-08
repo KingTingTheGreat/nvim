@@ -2,6 +2,7 @@ return {
     "neovim/nvim-lspconfig",
     event = { "BufReadPre", "BufNewFile" },
     dependencies = {
+	"hrsh7th/nvim-cmp",
         "hrsh7th/cmp-nvim-lsp",
         { "antosha417/nvim-lsp-file-operations", config = true },
         { "folke/neodev.nvim",                   opts = {} },
@@ -29,14 +30,14 @@ return {
                 opts.desc = "Show LSP references"
                 keymap.set("n", "gR", "<cmd>Telescope lsp_references<CR>", opts) -- show definition, references
 
-                opts.desc = "Go to declaration"
-                keymap.set("n", "gD", vim.lsp.buf.declaration, opts) -- go to declaration
-
+                -- opts.desc = "Go to declaration"
+                -- keymap.set("n", "gD", vim.lsp.buf.declaration, opts) -- go to declaration
+		--
                 opts.desc = "Show LSP definitions"
                 keymap.set("n", "gd", "<cmd>Telescope lsp_definitions<CR>", opts) -- show lsp definitions
 
-                opts.desc = "Show LSP implementations"
-                keymap.set("n", "gi", "<cmd>Telescope lsp_implementations<CR>", opts) -- show lsp implementations
+                -- opts.desc = "Show LSP implementations"
+                -- keymap.set("n", "gi", "<cmd>Telescope lsp_implementations<CR>", opts) -- show lsp implementations
 
                 opts.desc = "Show LSP type definitions"
                 keymap.set("n", "gt", "<cmd>Telescope lsp_type_definitions<CR>", opts) -- show lsp type definitions
@@ -107,13 +108,13 @@ return {
                     filetypes = { "graphql", "gql", "svelte", "typescriptreact", "javascriptreact" },
                 })
             end,
-            ["emmet_ls"] = function()
-                -- configure emmet language server
-                lspconfig["emmet_ls"].setup({
-                    capabilities = capabilities,
-                    filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
-                })
-            end,
+            -- ["emmet_ls"] = function()
+            --     -- configure emmet language server
+            --     lspconfig["emmet_ls"].setup({
+            --         capabilities = capabilities,
+            --         filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
+            --     })
+            -- end,
             ["lua_ls"] = function()
                 -- configure lua server (with special settings)
                 lspconfig["lua_ls"].setup({
@@ -131,6 +132,13 @@ return {
                     },
                 })
             end,
+            -- ["java_language_server"] = function()
+            --     -- configure java language server
+            --     lspconfig["java_language_server"].setup({
+            --         capabilities = capabilities,
+            --         filetypes = { "java" },
+            --     })
+            -- end,
         })
     end,
 }

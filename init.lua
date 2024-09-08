@@ -17,9 +17,8 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 
 vim.opt.autoindent = true
-vim.opt.expandtab = false
-vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
+vim.opt.expandtab = false
 vim.opt.shiftwidth = 4
 
 vim.opt.wrap = true
@@ -61,31 +60,25 @@ vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower win
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
 vim.api.nvim_create_autocmd('TextYankPost', {
-	desc = 'Highlight when yanking (copying) text',
-	group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
-	callback = function()
-		vim.highlight.on_yank()
-	end,
+    desc = 'Highlight when yanking (copying) text',
+    group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
+    callback = function()
+	vim.highlight.on_yank()
+    end,
 })
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
     vim.fn.system({
-        "git",
-        "clone",
-        "--filter=blob:none",
-        "https://github.com/folke/lazy.nvim.git",
-        "--branch=stable", -- latest stable release
-        lazypath,
+	"git",
+	"clone",
+	"--filter=blob:none",
+	"https://github.com/folke/lazy.nvim.git",
+	"--branch=stable", -- latest stable release
+	lazypath,
     })
 end
 vim.opt.rtp:prepend(lazypath)
---[[
-require("lazy").setup({
-	-- "tpope/vim-sleuth",
-	{ "numToStr/Comment.nvim", opts = {} },
-})
---]]
 local opts = {}
 
 require("lazy").setup("plugins", opts)

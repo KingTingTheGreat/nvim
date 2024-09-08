@@ -1,5 +1,5 @@
 return {
-	"xiyaowong/transparent.nvim",
-	lazy = false,
-	priority = 500,
+	-- "xiyaowong/transparent.nvim",
+	-- lazy = false,
+	-- priority = 500,
 }
