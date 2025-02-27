@@ -33,6 +33,21 @@ return {
 		-- vim.keymap.set("n", "<C-p>", builtin.find_files, {})
 		--
 		vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
-		local telescope = require("telescope")
+		-- local telescope = require("telescope")
+
+		-- telescope.load_extension("media_files")
+		-- "nvim-telescope/telescope-media-files.nvim")
+		--
+		-- require("telescope").setup({
+		-- 	extensions = {
+		-- 		media_files = {
+		-- 			-- fgletypes whitelist
+		-- 			-- defaults to {"png", "jpg", "mp4", "webm", "pdf"}
+		-- 			filetypes = { "png", "webp", "jpg", "jpeg" },
+		-- 			-- find command (defaults to `fd`)
+		-- 			find_cmd = "rg",
+		-- 		},
+		-- 	},
+		-- })
 	end,
 }

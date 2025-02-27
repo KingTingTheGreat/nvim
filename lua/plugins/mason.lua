@@ -50,6 +50,7 @@ return {
 				"htmx",
 				-- "java_language_server",
 				"jdtls",
+				-- "gleam",
 			},
 		})
 
@@ -58,7 +59,7 @@ return {
 				"prettier", -- prettier formatter
 				"stylua", -- lua formatter
 				"isort", -- python formatter
-				"black", -- python formatter
+				-- "black", -- python formatter
 				"pylint",
 				"eslint_d",
 			},
