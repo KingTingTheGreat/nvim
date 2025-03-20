@@ -32,6 +32,7 @@ return {
 		vim.keymap.set("n", "<C-p>", find_files_toggle)
 		-- vim.keymap.set("n", "<C-p>", builtin.find_files, {})
 		--
+		vim.keymap.set("n", "<leader>hi", builtin.oldfiles, {})
 		vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
 		-- local telescope = require("telescope")
 
