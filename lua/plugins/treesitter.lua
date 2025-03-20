@@ -21,5 +21,6 @@ return {
 			auto_install = true,
 			ignore_install = {},
 		})
+		require("flash").treesitter()
 	end,
 }

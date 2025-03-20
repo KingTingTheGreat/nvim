@@ -134,12 +134,12 @@ return {
 					},
 				})
 			end,
-			-- ["java_language_server"] = function()
-			--     -- configure java language server
-			--     lspconfig["java_language_server"].setup({
-			--         capabilities = capabilities,
-			--         filetypes = { "java" },
-			--     })
+			-- ["jdtls"] = function()
+			-- 	-- configure java language server
+			-- 	lspconfig["jdtls"].setup({
+			-- 		capabilities = capabilities,
+			-- 		filetypes = { "java" },
+			-- 	})
 			-- end,
 		})
 	end,

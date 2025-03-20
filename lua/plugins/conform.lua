@@ -41,6 +41,10 @@ return {
 					"prettier",
 					stop_after_first = true,
 				},
+				java = {
+					"google-java-format",
+				},
+				astro = { "prettier" },
 				python = { "black" },
 				rust = { "rustfmt" },
 			},
