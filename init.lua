@@ -47,6 +47,9 @@ vim.opt.inccommand = "split"
 
 vim.opt.cursorline = true
 
+vim.lsp.set_log_level("off")
+-- vim.lsp.set_log_level("debug")
+
 -- vim.opt.clipboard = "unnamedplus"
 
 -- Diagnostic keymaps
