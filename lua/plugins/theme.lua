@@ -16,7 +16,7 @@
 -- 		vim.cmd.colorscheme("cyberdream")
 -- 	end,
 -- }
---
+
 return {
 	"navarasu/onedark.nvim",
 	lazy = false,
