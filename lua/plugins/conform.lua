@@ -16,6 +16,16 @@ return {
 					"prettier",
 					stop_after_first = true,
 				},
+				svg = {
+					"prettierd",
+					"prettier",
+					stop_after_first = true,
+				},
+				scss = {
+					"prettierd",
+					"prettier",
+					stop_after_first = true,
+				},
 				html = {
 					"prettierd",
 					"prettier",
