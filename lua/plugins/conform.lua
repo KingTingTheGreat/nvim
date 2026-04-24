@@ -47,6 +47,7 @@ return {
 				astro = { "prettier" },
 				python = { "black" },
 				rust = { "rustfmt" },
+				sql = { "sleek" },
 			},
 			format_on_save = {
 				timeout_ms = 5000,
