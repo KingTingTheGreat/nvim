@@ -93,7 +93,6 @@ require("plugins.mason-tool-installer")
 require("plugins.telescope")
 
 require("plugins.treesitter")
-vim.treesitter.start()
 
 require("plugins.autocomplete")
 require("plugins.copilot")
