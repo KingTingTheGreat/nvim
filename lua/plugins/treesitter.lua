@@ -28,6 +28,12 @@ require("nvim-treesitter").setup({
 	auto_install = true,
 	ignore_install = {},
 })
+vim.api.nvim_create_autocmd("FileType", {
+	desc = "Start treesitter when opening a file",
+	callback = function()
+		pcall(vim.treesitter.start)
+	end,
+})
 -- local config = require("nvim-treesitter.config")
 --
 -- local already_installed = config.get_installed()
