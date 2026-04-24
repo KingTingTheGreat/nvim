@@ -1,0 +1,26 @@
+vim.pack.add({ "https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim" })
+require("mason-tool-installer").setup({
+	ensure_installed = {
+		"typescript-language-server",
+		"html-lsp",
+		"css-lsp",
+		"tailwindcss-language-server",
+		"pyright",
+		"gopls",
+		"json-lsp",
+		"bash-language-server",
+		"clangd",
+		"eslint-lsp",
+		"dockerfile-language-server",
+		"rust-analyzer",
+		"templ",
+		"htmx-lsp",
+		"jdtls",
+		"prettier",
+		"stylua",
+		"isort",
+		"black",
+		"pylint",
+		"eslint_d",
+	},
+})
