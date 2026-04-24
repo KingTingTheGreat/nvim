@@ -44,7 +44,26 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
 		map("n", "gr", "<cmd>Telescope lsp_references<CR>", "Show LSP references")
 
-		map("n", "gd", vim.lsp.buf.definition, "Go to definition")
+		local function goto_definition_single()
+			local params = vim.lsp.util.make_position_params()
+			vim.lsp.buf_request(0, "textDocument/definition", params, function(err, result)
+				if err then
+					return
+				end
+				if not result or vim.tbl_isempty(result) then
+					return
+				end
+
+				if vim.tbl_islist(result) and #result == 1 then
+					vim.lsp.util.jump_to_location(result[1], "utf-8")
+				else
+					vim.lsp.util.set_qflist(vim.lsp.util.locations_to_items(result, "utf-8"))
+					vim.cmd("copen")
+				end
+			end)
+		end
+		map("n", "gd", goto_definition_single, "Go to definition")
+		-- map("n", "gd", vim.lsp.buf.definition, "Go to definition")
 
 		map("n", "gt", "<cmd>Telescope lsp_type_definitions<CR>", "Show LSP type definitions")
 
