@@ -14,7 +14,7 @@ dashboard.section.header.val = {
 }
 dashboard.section.buttons.val = {
 	dashboard.button("<C-i>", "  New file", "<CMD>Oil --float<CR>"),
-	dashboard.button("<C-p>", "󰈞  Find file", ":Telescope find_files <CR>"),
+	dashboard.button("<C-p>", "󰈞  Find file", "<CMD>FindFilesToggle<CR>"),
 	dashboard.button("<leader>hi", "󰈬  Recently opened files", ":Telescope oldfiles <CR>"),
 	dashboard.button("<leader>fg", "󰊄  Live grep", ":Telescope live_grep <CR>"),
 	dashboard.button("q", "⏻  Quit Neovim", ":qa<CR>"),

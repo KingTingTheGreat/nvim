@@ -5,16 +5,16 @@ vim.pack.add({
 	"https://github.com/nvim-telescope/telescope-media-files.nvim",
 })
 local builtin = require("telescope.builtin")
-local find_files_toggle
-find_files_toggle = function(opts, no_ignore)
+
+local function find_files_toggle(opts, no_ignore)
 	opts = opts or {}
 	no_ignore = vim.F.if_nil(no_ignore, false)
+
 	opts.attach_mappings = function(_, map)
 		map({ "n", "i" }, "<C-h>", function(prompt_bufnr)
 			local prompt = require("telescope.actions.state").get_current_line()
 			require("telescope.actions").close(prompt_bufnr)
-			no_ignore = not no_ignore
-			find_files_toggle({ default_text = prompt }, no_ignore)
+			find_files_toggle({ default_text = prompt }, not no_ignore)
 		end)
 		return true
 	end
@@ -23,12 +23,18 @@ find_files_toggle = function(opts, no_ignore)
 		opts.no_ignore = true
 		opts.hidden = true
 		opts.prompt_title = "Find Files <ALL>"
-		builtin.find_files()
 	else
 		opts.prompt_title = "Find Files"
-		builtin.find_files()
 	end
+
+	builtin.find_files(opts)
 end
+
+vim.api.nvim_create_user_command("FindFilesToggle", function()
+	find_files_toggle()
+end, {})
+
+vim.keymap.set("n", "<C-p>", "<cmd>FindFilesToggle<CR>")
 vim.keymap.set("n", "<C-p>", find_files_toggle)
 vim.keymap.set("n", "<leader>hi", builtin.oldfiles)
 vim.keymap.set("n", "<leader>fg", builtin.live_grep)
