@@ -29,7 +29,7 @@ vim.opt.breakindent = true
 vim.opt.termguicolors = true
 vim.opt.background = "dark"
 
-vim.opt.scrolloff = 10
+-- vim.opt.scrolloff = 10
 
 vim.opt.hlsearch = true
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
